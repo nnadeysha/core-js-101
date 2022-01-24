@@ -1,3 +1,4 @@
+/* eslint-disable no-else-return */
 /* *******************************************************************************************
  *                                                                                           *
  * Please read the following tutorial before implementing tasks:                              *
@@ -200,8 +201,15 @@ function roundToPowerOfTen(num, pow) {
  *   16 => false
  *   17 => true
  */
-function isPrime(/* n */) {
-  throw new Error('Not implemented');
+function isPrime(n) {
+  let flag = true;
+  // eslint-disable-next-line no-plusplus
+  for (let i = 2; i < n; i++) {
+    if (n % i === 0) {
+      flag = false;
+    }
+  }
+  return flag;
 }
 
 /**
@@ -219,8 +227,8 @@ function isPrime(/* n */) {
  *   toNumber(42, 0) => 42
  *   toNumber(new Number(42), 0) => 42
  */
-function toNumber(/* value, def */) {
-  throw new Error('Not implemented');
+function toNumber(value, def) {
+  return +value ? +value : def;
 }
 
 module.exports = {
